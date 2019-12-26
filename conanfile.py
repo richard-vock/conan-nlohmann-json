@@ -12,11 +12,11 @@ class NLohmannJSONConan(ConanFile):
     settings = "os"
 
     def source(self):
-        git = tools.Git(folder='json')
+        git = tools.Git(folder='nlohmann')
         git.clone("https://github.com/nlohmann/json.git", "v3.7.3")
 
     def package(self):
-        self.copy("*.hpp", dst="include/json", src="json/include/nlohmann", keep_path=True)
+        self.copy("*.hpp", dst="include/nlohmann", src="nlohmann/include/nlohmann", keep_path=True)
 
     def package_id(self):
         self.info.header_only()
